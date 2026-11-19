@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="vi"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Thiệp bí mật 19/11</title>
+<style>
+*{box-sizing:border-box}body{margin:0;min-height:100vh;overflow:hidden;display:grid;place-items:center;font-family:Arial,sans-serif;color:#fff4dc;background:radial-gradient(circle at top,#35415b,#101522 65%,#080b12)}
+.card{width:min(92vw,430px);min-height:550px;padding:28px 24px;text-align:center;position:relative;border:1px solid #d6a64d;border-radius:25px;background:linear-gradient(145deg,#242b3b,#101522);box-shadow:0 20px 70px #0009;z-index:2}
+.stamp{display:inline-block;border:2px solid #ff6262;color:#ff7777;padding:7px 12px;letter-spacing:3px;font-weight:bold;transform:rotate(-5deg)}
+.date{margin-top:28px;color:#ffd477;letter-spacing:3px;font-size:12px}h1{font-size:39px;line-height:1.1;color:#ffdc91;margin:12px 0}.sub{color:#c5ccda;font-size:14px}.gift{font-size:76px;margin:25px}
+button{border:0;border-radius:30px;padding:15px 25px;background:linear-gradient(120deg,#ffe6a7,#e9aa43);font-weight:bold;font-size:15px;cursor:pointer}
+.hint{font-size:12px;color:#aeb6c6;margin:14px}.message{display:none;line-height:1.65;margin:18px auto 0;max-width:340px;animation:fade .8s}.message strong{display:block;color:#ffd477;font-size:20px;margin-bottom:9px}.signature{color:#ffd477;font-weight:bold;margin-top:12px}.foot{position:absolute;bottom:15px;left:0;right:0;font-size:10px;letter-spacing:2px;color:#8993a7}
+.float{position:fixed;pointer-events:none;animation:rise linear infinite;z-index:1}@keyframes rise{from{transform:translateY(110vh) rotate(0)}to{transform:translateY(-15vh) rotate(360deg)}}@keyframes fade{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+.pop{position:fixed;z-index:4;pointer-events:none;animation:pop 1.4s forwards}@keyframes pop{0%{opacity:0;transform:scale(.3)}15%{opacity:1}100%{opacity:0;transform:translate(var(--x),var(--y)) scale(1.5) rotate(35deg)}}
+</style>
+<body><main class="card">
+<div class="stamp">TOP SECRET • 19/11</div><div class="date">HỒ SƠ ĐẶC BIỆT · 19 THÁNG 11</div>
+<h1>MISSION<br>MEN'S DAY</h1><div class="sub">Một nhiệm vụ quan trọng đang chờ được mở khóa...</div>
+<div class="gift" id="gift">🕵️‍♂️</div><button id="btn" onclick="openCard()">🔓 MỞ THƯ MẬT</button>
+<div class="hint" id="hint">Bấm nút để nhận lời nhắn bí mật nhé!</div>
+<section class="message" id="msg"><strong>🎉 CHÚC MỪNG NGÀY QUỐC TẾ ĐÀN ÔNG! 🎉</strong>
+Chúc quý ông luôn phong độ, đẹp trai, vui vẻ và thành công. Tiền vào như nước 💸, bụng không bia 🍻, tóc không hói 🧑‍🦱, tình duyên thuận lợi ❤️. Hôm nay được quyền làm vua, ngày mai lại tiếp tục làm người bình thường nhé! 😎
+<div class="signature">— Chúc một ngày 19/11 thật vui! 👑</div></section>
+<div class="foot">CLASSIFIED MESSAGE · FOR YOUR EYES ONLY</div></main>
+<script>
+const icons=["😂","😎","👑","💸","🍻","❤️","🎉","🕶️","🕵️","✨","🥳","🫡"];
+for(let i=0;i<22;i++){let e=document.createElement("div");e.className="float";e.textContent=icons[Math.random()*icons.length|0];e.style.left=Math.random()*100+"vw";e.style.fontSize=18+Math.random()*22+"px";e.style.animationDuration=9+Math.random()*13+"s";e.style.animationDelay=-Math.random()*18+"s";document.body.append(e)}
+function openCard(){document.getElementById("msg").style.display="block";document.getElementById("gift").textContent="🥳";document.getElementById("btn").textContent="🎊 ĐÃ MỞ KHÓA!";document.getElementById("btn").disabled=true;document.getElementById("hint").textContent="Nhiệm vụ hoàn thành. Chúc mừng!";for(let i=0;i<35;i++){let e=document.createElement("div");e.className="pop";e.textContent=icons[Math.random()*icons.length|0];e.style.left=45+Math.random()*10+"vw";e.style.top=42+Math.random()*12+"vh";e.style.fontSize=20+Math.random()*24+"px";e.style.setProperty("--x",Math.random()*420-210+"px");e.style.setProperty("--y",Math.random()*440-220+"px");document.body.append(e);setTimeout(()=>e.remove(),1500)}}
+</script></body></html>
